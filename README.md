@@ -45,6 +45,7 @@ Register-ScheduledTask -TaskName "Renew certificates" -Trigger $trigger -Action 
 
 ## References
 
+* [DNS providers working with Let's Encrypt DNS validation](https://community.letsencrypt.org/t/dns-providers-who-easily-integrate-with-lets-encrypt-dns-validation/86438)
 * [Certbot](https://certbot.eff.org/)
 * [Certbot - Github repository](https://github.com/certbot/certbot)
 * [Generating HTTPS Certificate using DNS a Challenge through Let's Encrypt](https://web.navan.dev/posts/2020-11-17-Lets-Encrypt-DuckDns.html)
