@@ -35,6 +35,11 @@ New-PACertificate $certNames -UseSerialValidation -Contact $email -Plugin DuckDN
 ```
 ⚠️ Generated certificates are located in `%LOCALAPPDATA%\Posh-ACME` directory.
 
+* Install generated certificates :
+```
+Install-PACertificate
+```
+
 * Schedule a task to auto-renew certificates :
 ```
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument '-Command "&{Submit-Renewal}"'
