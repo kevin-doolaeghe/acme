@@ -36,7 +36,7 @@ New-PACertificate $certNames -UseSerialValidation -Contact $email -Plugin DuckDN
 
 * Schedule a task to auto-renew certificates :
 ```
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-Command &{Submit-Renewal}"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument '-Command "&{Submit-Renewal}"'
 $trigger = New-ScheduledTaskTrigger -Daily -At 5:00AM
 $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 $settings = New-ScheduledTaskSettingsSet -MultipleInstances Parallel
