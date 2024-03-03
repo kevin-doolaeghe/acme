@@ -33,6 +33,7 @@ $certNames = "$($pArgs.DuckDomain).duckdns.org","*.$($pArgs.DuckDomain).duckdns.
 $email = (Read-Host -Prompt "Email")
 New-PACertificate $certNames -UseSerialValidation -Contact $email -Plugin DuckDNS -PluginArgs $pArgs -Verbose'
 ```
+⚠️ Generated certificates are located in `%LOCALAPPDATA%\Posh-ACME` directory.
 
 * Schedule a task to auto-renew certificates :
 ```
