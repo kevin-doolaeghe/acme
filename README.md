@@ -59,6 +59,7 @@ Register-ScheduledTask -TaskName "Renew certificates" -Trigger $trigger -Action 
 * [SNB Forums - DuckDNS with Let's Encrypt using ACME.sh](https://www.snbforums.com/threads/duckdns-with-letsencrypt.86114/)
 * [Posh-ACME Powershell Module](https://poshac.me/)
 * [Posh-ACME - DuckDNS plugin](https://poshac.me/docs/v4/Plugins/DuckDNS/)
+* [Posh-ACME.Deploy](https://github.com/rmbolger/Posh-ACME.Deploy)
 * [Posh-ACME - Github repository](https://github.com/rmbolger/Posh-ACME)
 * [Win-ACME](https://www.win-acme.com/)
 * [Win-ACME - Cloudflare plugin](https://www.win-acme.com/reference/plugins/validation/dns/cloudflare)
