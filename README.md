@@ -42,7 +42,7 @@ Install-PACertificate
 
 * Schedule a task to auto-renew certificates :
 ```
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument '-Command "&{Submit-Renewal}"'
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument '-Command "&{Submit-Renewal ; Install-PaCertificate}"'
 $trigger = New-ScheduledTaskTrigger -Daily -At 5:00AM
 $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 $settings = New-ScheduledTaskSettingsSet -MultipleInstances Parallel
