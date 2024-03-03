@@ -16,6 +16,7 @@ There are several solutions :
 * Install `Posh-ACME` :
 ```
 Install-Module -Name Posh-ACME -Scope AllUsers
+Install-Module -Name Posh-ACME.Deploy -Scope AllUsers
 ```
 
 * Enable Powershell script execution :
@@ -47,6 +48,11 @@ $trigger = New-ScheduledTaskTrigger -Daily -At 5:00AM
 $principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 $settings = New-ScheduledTaskSettingsSet -MultipleInstances Parallel
 Register-ScheduledTask -TaskName "Renew certificates" -Trigger $trigger -Action $action -Settings $settings -Principal $principal -Description "Renew certificates using Posh-ACME"
+```
+
+* Force certificate renewal and replacement for `Test` website in IIS :
+```
+Submit-Renewal -Force | Set-IISCertificate -SiteName 'Test' -RemoveOldCert -Verbose
 ```
 
 ## References
